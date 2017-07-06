@@ -1,0 +1,16 @@
+app_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+
+app_courslistpage:
+    path:     /cours
+    defaults: { _controller: AppBundle:Default:courslist }
+
+app_courspage:
+    path:     /cours/{crs}
+    defaults: { _controller: AppBundle:Default:cours }
+
+app_validpresence:
+    path:     /validpresence
+    defaults: { _controller: AppBundle:Default:validpresence }
+    methods:  [POST]

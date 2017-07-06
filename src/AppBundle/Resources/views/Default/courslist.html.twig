@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+	<div class="jumbotron">
+	  	<div class="container">
+		 	<ol class="breadcrumb">
+			  <li class="active">Cours</a></li>
+			</ol>
+			<div class="list-group">
+				{% for cours in courses %}
+			  		<a href="{{ path('app_courspage', {'crs': cours.id }) }}" class="list-group-item
+			  		 {% if loop.index is even %}
+			  		 list-group-item-success
+			  		 {% else %}
+			  		 list-group-item-info
+			  		 {% endif %}
+			  		 ">
+			  		   <b>Matière: </b>{{cours.nom}} &nbsp; |
+			  		   <b>Prof: </b>{{cours.personne.prenom}} &nbsp; {{cours.personne.nom}} &nbsp; |
+			  		   <b>Date: </b>{{cours.dateDebut|date("d/m/Y") }}
+			  		</a>
+			  	{% endfor %}
+			</div>
+	  	</div>
+	</div>
+
+{% endblock %}

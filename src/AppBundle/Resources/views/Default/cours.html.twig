@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+
+{% block body %}
+
+	<div class="jumbotron">
+	  	<div class="container">
+		 	<ol class="breadcrumb">
+			  <li><a href="{{ url('app_courslistpage') }}">Cours</a></li>
+			  <li>{{ participants | first.cours.nom }} &nbsp; ({{ participants | first.cours.personne.prenom }} {{ participants | first.cours.personne.nom }})</li>
+			</ol>
+			<div class="list-group students">
+			  {% for participant in participants|sort %}
+			  		<a href="" class="list-group-item
+			  		 	{% if participant.id is even %}
+			  		 		list-group-item-success
+			  		 	{% else %}
+			  		 		list-group-item-info
+			  		 	{% endif %}">
+
+			  		    {{participant.personne.prenom}} {{participant.personne.nom}} 
+			  		    &nbsp;&nbsp;
+			  		    <span class="glyphicon glyphicon-ok-circle valid {% if participant.presence %} getpresence" {% endif %} aria-hidden="true"></span>
+			  		    <span class="idpart">{{participant.id}}</span>
+			  		    <span class="idcours">{{participant.cours.id}}</span>
+			  		</a>
+			  	{% endfor %}
+			</div>
+	  	</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+.students span {
+	display: none;
+}
+
+.students span.getpresence {
+	display: inline;
+	color: #004d00;
+}

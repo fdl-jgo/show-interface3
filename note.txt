@@ -1,0 +1,25 @@
+Ma tâche : creer un systeme pour encoder les presences.
+
+j'ai decidé de le faire avec symfony qui est un framework php. Et j ai utilé mysql pour la base de donnée.
+
+tools (composer, git, bower)
+
+php utile Doctrine qui est l'orm installé par defaut. il utilise aussi twig qui est le moteur de rendu html par defaut.
+
+les etapes pour faire fonctionner mon programme:
+- intallation de symfony
+- configuration
+	- app/parameters.yml => pour la db => Avec doctrine je creer la la base de donnée.
+		-mailer ? , token ?
+			(Symfony2 uses this secret parameter for example to generate csrf tokens)
+- Creation des entités 
+- Ajout des annotation pour permettre à doctrine de generer les tables.
+- Doctrine gère les requetes vers la base de donnée (en eager != lazy loading???) => Dépots
+- Remplir la base de donnée => bundle DoctrineFixturesBundle + lib FAKER + Doctrine cmd.
+
+
+??bundle (paquet)
+!!override
+!!bin : utilitaire systeme
+!!bower: a package manager for the web
+!!composer: Dependency Manager for PHP
